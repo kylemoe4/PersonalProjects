@@ -1,0 +1,275 @@
+Homework #3
+Your name: Kyle Moe
+
+
+---------------------------------------- Question 1 Query ---------------------------------------- 
+
+SELECT COUNT(*) FROM film WHERE rental_rate=4.99
+
+---------------------------------------- Question 1 Results ---------------------------------------- 					
+
+336
+
+---------------------------------------- Question 2 Query ---------------------------------------- 
+
+SELECT first_name,last_name FROM customer 
+WHERE active=0;
+
+---------------------------------------- Question 2 Results ---------------------------------------- 					
+
+first_name	last_name
+"SANDRA"	"MARTIN"
+"JUDITH"	"COX"
+"SHEILA"	"WELLS"
+"ERICA"		"MATTHEWS"
+"HEIDI"		"LARSON"
+"PENNY"		"NEAL"
+"KENNETH"	"GOODEN"
+"HARRY"		"ARCE"
+"NATHAN"	"RUNYON"
+"THEODORE"	"CULP"
+"MAURICE"	"CRAWLEY"
+"BEN"		"EASTER"
+"CHRISTIAN"	"JUNG"
+"JIMMIE"	"EGGLESTON"
+"TERRANCE"	"ROUSH"	
+
+---------------------------------------- Question 3 Query ---------------------------------------- 
+
+SELECT payment_id,amount,payment_date FROM payment
+ORDER BY amount DESC LIMIT 10;
+
+---------------------------------------- Question 3 Results ---------------------------------------- 					
+payment_id	amount		payment_date
+24866		11.99		"2017-03-02 20:46:39.996577-07"
+28814		11.99		"2017-04-06 21:26:57.996577-06"
+23757		11.99		"2017-03-21 22:02:26.996577-06"
+24553		11.99		"2017-03-23 20:47:59.996577-06"
+17354		11.99		"2017-02-17 22:19:47.996577-07"
+28799		11.99		"2017-04-07 19:14:17.996577-06"
+20403		11.99		"2017-03-21 21:57:24.996577-06"
+22650		11.99		"2017-03-22 22:17:22.996577-06"
+17055		11.99		"2017-01-25 16:46:45.996577-07"
+29136		11.99		"2017-04-29 21:06:07.996577-06"
+
+---------------------------------------- Question 4 Query ---------------------------------------- 
+
+SELECT COUNT(*); FROM film WHERE language_id IN
+(SELECT language_id FROM language WHERE name='English');
+
+SELECT COUNT(*) FROM film 
+INNER JOIN language ON film.language_id=language.language_id
+WHERE language.name='English';
+
+---------------------------------------- Question 4 Results ---------------------------------------- 					
+
+1000
+
+---------------------------------------- Question 5 Query ---------------------------------------- 
+
+SELECT COUNT(*) FROM inventory GROUP BY film_id
+ORDER BY count DESC LIMIT 1;
+
+---------------------------------------- Question 5 Results ---------------------------------------- 					
+
+8
+
+---------------------------------------- Question 6 Query ---------------------------------------- 
+
+SELECT customer_id,SUM(amount) as "Total_Amount" 
+FROM payment WHERE customer_id>500 group by customer_id;
+
+---------------------------------------- Question 6 Results ---------------------------------------- 					
+
+customer_id	Total_Amount
+550		159.68
+539		90.78
+554		101.78
+576		139.66
+509		100.80
+556		83.79
+529		118.71
+502		138.66
+587		108.74
+578		96.78
+506		152.65
+508		127.75
+599		83.81
+596		96.72
+512		115.74
+523		93.78
+538		117.71
+595		117.70
+534		88.76
+597		99.75
+548		79.81
+501		89.79
+545		89.79
+528		111.75
+563		110.71
+557		73.76
+559		110.72
+513		148.69
+589		129.72
+555		74.83
+522		167.67
+567		85.80
+575		126.71
+507		95.75
+543		82.78
+565		126.71
+566		141.66
+551		96.74
+532		152.68
+592		111.71
+553		107.76
+519		103.77
+521		80.77
+558		135.72
+540		112.76
+598		83.78
+526		221.55
+524		87.81
+588		115.71
+586		64.81
+572		108.75
+593		113.74
+549		77.80
+552		90.79
+541		108.76
+577		118.72
+505		97.79
+561		96.73
+525		74.81
+531		118.75
+546		107.74
+562		109.75
+537		103.75
+581		107.73
+591		134.73
+503		115.68
+573		120.71
+517		105.75
+585		117.76
+511		99.76
+514		74.78
+582		113.75
+504		133.72
+560		132.70
+547		99.77
+518		111.74
+583		117.77
+569		134.68
+527		81.76
+590		112.75
+564		91.76
+535		135.68
+579		111.73
+510		122.74
+584		129.70
+515		126.72
+574		109.72
+571		121.76
+516		98.74
+542		94.82
+594		130.73
+533		141.67
+568		66.79
+544		98.78
+570		99.74
+580		99.73
+530		76.77
+536		117.75
+520		134.68	
+
+---------------------------------------- Question 7 Query ---------------------------------------- 
+
+SELECT category.name,SUM(payment.amount) FROM payment
+INNER JOIN rental ON rental.rental_id=payment.rental_id
+INNER JOIN inventory ON rental.inventory_id=inventory.inventory_id
+INNER JOIN film ON film.film_id=inventory.film_id
+INNER JOIN film_category ON film_category.film_id=film.film_id
+INNER JOIN category ON film_category.category_id=category.category_id
+GROUP BY category.category_id;
+
+
+---------------------------------------- Question 7 Results ---------------------------------------- 					
+
+Category Name	Total Sales
+"Games"		4281.33
+"New"		4361.57
+"Animation"	4656.30
+"Children"	3655.55
+"Music"		3417.72
+"Comedy"	4383.58
+"Family"	4226.07
+"Classics"	3639.59
+"Documentary"	4217.52
+"Horror"	3722.54
+"Foreign"	4270.67
+"Sports"	5314.21
+"Sci-Fi"	4756.98
+"Drama"		4587.39
+"Action"	4375.85
+"Travel"	3549.64
+
+---------------------------------------- Question 8 Query ---------------------------------------- 
+
+SELECT COUNT(rental.*) FROM rental
+INNER JOIN customer ON customer.customer_id=rental.customer_id
+WHERE customer.first_name='JOHN'
+AND customer.last_name='FARNSWORTH';
+
+---------------------------------------- Question 8 Results ---------------------------------------- 					
+
+31	
+
+---------------------------------------- Question 9 Query ---------------------------------------- 
+
+SELECT COUNT(rental.*) FROM rental
+INNER JOIN payment ON payment.rental_id=rental.rental_id
+WHERE payment.payment_date<'20170127';
+
+---------------------------------------- Question 9 Results ---------------------------------------- 					
+
+328	
+
+---------------------------------------- Question 10 Query ---------------------------------------- 
+
+CREATE TABLE short_films (
+	film_id INTEGER PRIMARY KEY,
+	title VARCHAR(40) NOT NULL,
+	length INTEGER NOT NULL,
+	replacement_cost DECIMAL(9,2) NOT NULL,
+	rating VARCHAR(5) NOT NULL
+);
+	
+---------------------------------------- Question 11 Query ---------------------------------------- 
+
+INSERT INTO short_films
+SELECT film_id,title,length,replacement_cost,rating FROM film
+WHERE film.length < 50;
+
+---------------------------------------- Question 12 Query ---------------------------------------- 
+
+DELETE FROM short_films WHERE replacement_cost > 19.99;
+
+---------------------------------------- Question 13 Query ---------------------------------------- 
+
+ALTER TABLE short_films
+ADD stars INTEGER NOT NULL DEFAULT(5);
+
+---------------------------------------- Question 14 Query ---------------------------------------- 
+
+ALTER TABLE short_films
+RENAME COLUMN length TO length_min;
+ALTER TABLE short_films
+ADD length_sec INTEGER NOT NULL DEFAULT(1);
+UPDATE short_films
+SET length_sec=60*length_min;
+
+---------------------------------------- Question 15 Query ---------------------------------------- 
+
+DROP TABLE IF EXISTS short_films;
+
+

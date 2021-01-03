@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  	<head>
+  		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+		<!-- Popper JS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+	    <title>Add Interest</title>
+  	</head>
+  	<body>
+		<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+	  	<!-- Links -->
+	  		<ul class="navbar-nav mr-auto">
+	    		<li class="nav-item">
+	      			<a class="nav-link" href="mypage_bootstrap.html">Home</a>
+	    		</li>
+	    		<li class="nav-item">
+	      			<a class="nav-link" href="projects.html">Projects</a>
+	    		</li>
+	    		<li class="nav-item">
+	      			<a class="nav-link" href="form.html">Form</a>
+	    		</li>
+	  		</ul>
+			<ul class="navbar-nav ml-auto">
+		    	<li>
+		      		<a href="https://github.com/kylemoe4/Labs_3308"><i class="fab fa-github" style="color:white"></i></a>
+		    	</li>
+	  		</ul>	
+		</nav>
+		<div class="container">
+			<h1>Add New Interest</h1>
+			<form action="./mypage_bootstrap.html">
+				<div class="form-group">
+					<label for="interestName">Interest Name</label>
+					<input type="text" class="form-control" id="interestName" placeholder="Interest">
+				</div>
+				<div class="form-group">
+					<label for="interestText">Text About Interest</label>
+					<textarea class="form-control" id="interestText" rows="3"></textarea>
+				</div>
+				<div class="form-row">
+					<div class="col">
+						<div class="form-group">
+							<label for="imgUpload">Upload local image</label>
+							<input type="file" class="form-control-file" id="imgUpload">
+						</div>
+					</div>
+					<div class="col">
+						<div class="form-group">
+							<label for="tweetCount">Select # of Tweets to display</label>
+							<select class="form-control" id="tweetCount">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="interestLevel">On a scale of 1-5, how interested in this are you?</label><br>
+					<div class="form-check form-check-inline">
+						<input class="form-check-input" type="radio" name="interestLevel" id="inlineRadio1" value="option1">
+						<label class="form-check-label" for="inlineRadio1">1</label>
+					</div>
+					<div class="form-check form-check-inline">
+						<input class="form-check-input" type="radio" name="interestLevel" id="inlineRadio2" value="option2">
+						<label class="form-check-label" for="inlineRadio2">2</label>
+					</div>
+					<div class="form-check form-check-inline">
+						<input class="form-check-input" type="radio" name="interestLevel" id="inlineRadio3" value="option3">
+						<label class="form-check-label" for="inlineRadio3">3</label>
+					</div>
+					<div class="form-check form-check-inline">
+						<input class="form-check-input" type="radio" name="interestLevel" id="inlineRadio4" value="option4">
+						<label class="form-check-label" for="inlineRadio4">4</label>
+					</div>
+					<div class="form-check form-check-inline">
+						<input class="form-check-input" type="radio" name="interestLevel" id="inlineRadio5" value="option5">
+						<label class="form-check-label" for="inlineRadio5">5</label>
+					</div>
+				</div>
+
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label for="username">Username</label>
+						<input type="text" class="form-control" id="username" placeholder="Username">
+					</div>
+					<div class="form-group col-md-6">
+						<label for="password">Password</label>
+						<input type="password" class="form-control" id="password" placeholder="Password">
+					</div>
+				</div>
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</form>
+		</div>
+		<div class="navbar fixed-bottom bg-dark navbar-dark">
+  			<ul class="navbar-nav ml-auto">
+  				<li class="nav-item">
+  					<a class="nav-link" href="https://www.linkedin.com"><i class="fab fa-linkedin" style="color:white"></i></a>
+  				</li>
+  			</ul>
+  		</div>
+  	</body>
+</html>

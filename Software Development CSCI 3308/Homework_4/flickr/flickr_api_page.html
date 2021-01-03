@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <title>Flickr API Gallery</title>
+    <style type="text/css">
+		
+	</style>
+  </head>
+  <body>
+  	
+    <nav class="navbar navbar-expand bg-dark navbar-dark">
+
+            <!-- Links -->
+        <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="../mypage_bootstrap.html">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Projects</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Form</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="../signup-modal/login.html">Sign Up Modal</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="../tic-tac-toe/tic-tac-toe.html">Tic-Tac-Toe</a>
+        </li>
+        <li>
+            <a class="nav-link" href="./flickr_api_page.html">Flicker API Page</a>
+        </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+        <li>
+            <a href="https://github.com/kylemoe4/Labs_3308"><i class="fab fa-github" style="color:white"></i></a>
+        </li>
+        </ul>
+    </nav>
+    <div class="container-fluid p-4 bg-secondary text-white">
+        <form id="query" class="col-6 offset-3">
+            <div class="row justify-content-center">
+                <div class="col">
+                    <select class="custom-select" id="quantity">
+                        <option selected value="0">Choose quantity</option>
+                        <option value="30">30</option>
+                        <option value="50">50</option>
+                        <option value="70">70</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" id="tags" placeholder="Search">
+                </div>
+                <div class="col">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="container-fluid">
+        <div class="row justify-content-center" id="img_display">
+            
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="./script.js"></script>
+  </body>
+</html>

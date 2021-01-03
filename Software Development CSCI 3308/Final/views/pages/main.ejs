@@ -1,0 +1,21 @@
+<%- include('../partials/header') %>
+<%- include('../partials/menu') %>
+	<div class="container-fluid p-4 bg-secondary text-white>
+		<form class="col-6 offset-3">
+            <div class="row justify-content-center">
+                <div class="col-4">
+                    <input type="text" class="form-control" id="tags" placeholder="Search">
+                </div>
+                <div class="col-1">
+                    <button type="submit" class="btn btn-primary" onclick="makeApiCall()">Search</button>
+                </div>
+            </div>
+        </form>
+	</div>
+    <div class="container-fluid">
+        <div class="row justify-content-center" id="card_view">
+            
+        </div>
+    </div>
+<%- include('../partials/modal') %>
+<%- include('../partials/footer') %>

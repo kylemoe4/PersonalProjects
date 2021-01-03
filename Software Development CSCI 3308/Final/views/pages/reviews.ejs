@@ -1,0 +1,24 @@
+<%- include('../partials/header') %>
+<%- include('../partials/menu') %>
+	<div class="container">
+		<br>
+		<div class="jumbotron">
+			<h1 class="display-4">University Reviews</h1>
+		</div>
+		<table class="table table-bordered" id="review_table">
+			<tr>
+				<th>University</th>
+				<th>Review</th>
+				<th>Review Timestamp</th>
+			</tr>
+			<%
+			if (reviews) {
+				var revList = '';
+				reviews.forEach(function(rev){
+					revList += '<tr><td>'+rev.university_name+'</td><td>'+rev.review+'</td><td>'+rev.review_date+'</td></tr>';
+				}); %>
+				<%- revList %>
+			<% } %>
+		</table>
+	</div>
+<%- include('../partials/footer') %>

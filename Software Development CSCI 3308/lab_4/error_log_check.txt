@@ -1,0 +1,7 @@
+Sep 18 00:00:13 kyle-VirtualBox systemd-resolved[532]: Server returned error NXDOMAIN, mitigating potential DNS violation DVE-2018-0001, retrying transaction with reduced feature level UDP.
+Sep 18 09:06:39 kyle-VirtualBox tracker-miner-f[8421]: Error while sending AddMatch() message: The connection is closed
+Sep 18 09:06:39 kyle-VirtualBox tracker-miner-f[8421]: Error while sending AddMatch() message: The connection is closed
+Sep 18 09:06:39 kyle-VirtualBox tracker-miner-f[8421]: Error while sending AddMatch() message: The connection is closed
+Sep 18 09:18:54 kyle-VirtualBox systemd[1]: Condition check resulted in Process error reports when automatic reporting is enabled (file watch) being skipped.
+Sep 18 09:54:38 kyle-VirtualBox systemd-resolved[532]: Server returned error NXDOMAIN, mitigating potential DNS violation DVE-2018-0001, retrying transaction with reduced feature level UDP.
+Sep 18 09:54:38 kyle-VirtualBox systemd-resolved[532]: Server returned error NXDOMAIN, mitigating potential DNS violation DVE-2018-0001, retrying transaction with reduced feature level UDP.

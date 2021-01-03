@@ -1,0 +1,30 @@
+<form action="/reviews" method="post">
+<div class="modal fade" id="reviewModal" tabindex="-1" role="dialog" aria-labelledby="review" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Add Review</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="university_name" class="col-form-label">University:</label>
+            <input type="text" class="form-control" name="university_name" id="university_name">
+          </div>
+          <div class="form-group">
+            <label for="review_text" class="col-form-label">Review:</label>
+            <textarea class="form-control" name="review_text" id="review_text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+</form>
